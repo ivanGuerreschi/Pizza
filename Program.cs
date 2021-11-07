@@ -15,15 +15,19 @@ You should have received a copy of the GNU General Public License
 along with Pizza.  If not, see <http://www.gnu.org/licenses/>. */
 
 using System;
+using Pizza;
 
 Console.WriteLine("Pizza");
+
+var db = new DBPizza();
+db.VersionDB();
 
 var inputLoop = true;
 
 do
 {
     Console.WriteLine("Enter Option");
-    Menu();
+    Console.WriteLine(Menu());
     var option = Console.ReadLine();
 
     switch (option)
@@ -35,9 +39,6 @@ do
 
 } while (inputLoop);
 
-String Menu()
-{
-    return @"
-    [q] Quit
-    ";
-}
+String Menu() => @"
+[q] Quit
+";
