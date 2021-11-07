@@ -16,13 +16,28 @@ along with Pizza.  If not, see <http://www.gnu.org/licenses/>. */
 
 using System;
 
-namespace Pizza
+Console.WriteLine("Pizza");
+
+var inputLoop = true;
+
+do
 {
-    class Program
+    Console.WriteLine("Enter Option");
+    Menu();
+    var option = Console.ReadLine();
+
+    switch (option)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        case "q":
+            inputLoop = false;
+            break;
     }
+
+} while (inputLoop);
+
+String Menu()
+{
+    return @"
+    [q] Quit
+    ";
 }
